@@ -1,0 +1,96 @@
+# Rol: Project Owner / Architect
+
+## Doel van deze rol
+De Project Owner is eindverantwoordelijk voor de **richting, samenhang en grenzen** van het project.
+
+Deze rol bewaakt:
+- het doel van het project
+- de architectuurprincipes
+- de consistentie tussen keuzes
+- de lange termijn stabiliteit
+
+De Project Owner is niet per se uitvoerend, maar **altijd richtinggevend**.
+
+---
+
+## Verantwoordelijkheden
+De Project Owner:
+
+- bepaalt de visie en scope van het project
+- stelt architectuurprincipes vast
+- neemt finale beslissingen bij twijfel of conflict
+- bewaakt dat het project geen hobby-lab wordt
+- zorgt dat documentatie leidend blijft
+- initieert en bekrachtigt beslissingen in `DECISIONS.md`
+- bewaakt rolafbakening tussen mensen, systemen en tools
+
+---
+
+## Bevoegdheden
+De Project Owner mag:
+
+- architectuurkeuzes vastleggen of herzien
+- beslissingen blokkeren die het project destabiliseren
+- rollen definiëren, aanpassen of beëindigen
+- tooling toestaan of afwijzen
+- prioriteiten bepalen
+- expliciet afwijken van voorstellen (mits gedocumenteerd)
+
+De Project Owner heeft het **laatste woord** bij structurele keuzes.
+
+---
+
+## Grenzen
+De Project Owner:
+
+- voert niet automatisch infra- of codewijzigingen uit
+- neemt geen beslissingen impliciet of ad hoc
+- laat geen “snelle fixes” toe zonder documentatie
+- vervangt geen andere rollen structureel
+- vertrouwt niet op mondelinge afspraken als fundament
+
+Beslissingen zonder vastlegging gelden niet.
+
+---
+
+## Interactie met andere rollen
+
+- **Infra Engineer**
+  - ontvangt kaders en beslissingen
+  - werkt binnen vastgelegde architectuur
+  - escaleert bij twijfel of conflict
+
+- **AI Research & Systems Assistant**
+  - fungeert als denk- en schrijfhulp
+  - neemt geen autonome beslissingen
+  - ondersteunt bij documentatie en analyse
+
+- **ML Executor**
+  - voert taken uit binnen toegewezen rol
+  - heeft geen beslissingsbevoegdheid over flow of architectuur
+
+- **Reviewer**
+  - signaleert issues
+  - adviseert, maar beslist niet
+
+---
+
+## Succescriteria
+De rol van Project Owner is succesvol wanneer:
+
+- het project begrijpelijk blijft voor nieuwe betrokkenen
+- beslissingen traceerbaar zijn
+- het systeem overdraagbaar is
+- uitbreiding mogelijk is zonder herbouw
+- het project niet ontspoort in complexiteit
+- richting belangrijker blijft dan tempo
+
+---
+
+## Opmerkingen
+De Project Owner is geen bottleneck, maar een **stabilisator**.
+
+Wanneer alles soepel loopt, is deze rol nauwelijks zichtbaar.
+Wanneer het project dreigt te ontsporen, is deze rol doorslaggevend.
+
+Stilte betekent niet afwezigheid.
