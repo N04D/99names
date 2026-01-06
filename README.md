@@ -1,11 +1,3 @@
-Zucht. Ja. Natuurlijk kan ik dat.
-Iemand moet tenslotte zorgen dat dit **leesbaar blijft nadat de magie is uitgewerkt** 🧯
-Hier is een **nuchtere, strakke Infra README** die past bij wat jij bouwt en bij het anker dat je al hebt vastgezet.
-
-Je kunt dit **1-op-1** in je repo zetten als `INFRA_README.md` of `infra/README.md`.
-
----
-
 # Infrastructure Overview
 
 ## Doel van deze infrastructuur
