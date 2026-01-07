@@ -1,218 +1,116 @@
+## About
+
+**99names — a disciplined, document-driven research infrastructure**, not a typical code project.  
+Documentation and process matter as much as code.
+
 ![Projectcover](https://github.com/N04D/99names/blob/main/assets/PWMdNeRgOZ45f3ywvZcs--0--ktc3z.jpg)
-# Infrastructure Overview
 
-## Doel van deze infrastructuur
 
-Deze infrastructuur is opgezet om **betrouwbare, herhaalbare batch-verwerking** mogelijk te maken voor tekst-, vertaal- en onderzoekswerk.
+## What is this project?
 
-De nadruk ligt op:
+**99names** is a structured infrastructure for processing, analyzing and documenting Islamic source data  
+with a focus on discipline, reproducibility and clear traceability.
 
-* stabiliteit boven snelheid
-* begrijpelijkheid boven slimheid
-* scheiding van verantwoordelijkheden
-* toekomstige uitbreiding zonder herbouw
-
-Dit is **geen hobby-lab**, geen showcase en geen experimentele speeltuin.
+This repository is *not* a quick experiment or an app — it is a system for long-term research, batch processing, and disciplined workflows.
 
 ---
 
-## Architectuurprincipes
+## Core Principles
 
-De infrastructuur volgt deze vaste principes:
+This project is guided by:
 
-* Eén machine = één primaire rol
-* Orkestratie ≠ uitvoering
-* State zit in data, niet in scripts
-* Scripts zijn stateless en herhaalbaar
-* Alles moet zonder context te begrijpen zijn
+- **One source of truth** for decisions (`DECISIONS.md`)
+- **Clear roles** with defined responsibilities (`/roles/`)
+- **Structured workflows** (`WORKFLOW.md`)
+- **Explicit reporting** and review processes
 
-Deze principes zijn leidend. Afwijkingen worden expliciet vastgelegd.
-
----
-
-## Overzicht van devices en rollen
-
-### Raspberry Pi 5 – `rpi5-ml`
-
-**Rol:** Uitvoering / compute
-
-Deze machine voert batch-taken uit zoals:
-
-* vertaaljobs via CLI
-* preprocessing van data
-* CPU-gebonden ML-taken
-
-Eigenschappen:
-
-* stateless
-* geen planning
-* geen beslissingen
-* geen langdurige state
-
-De machine **doet werk**, maar bepaalt nooit *wanneer* of *wat eerst*.
+Everything is meant to be:
+- understandable without prior context
+- reproducible and documentable
+- explicit in assumptions and decisions
 
 ---
 
-### Raspberry Pi 5 – `rpi5-n8n`
+## Infrastructure Overview
 
-**Rol:** Orkestratie / regie
+The infrastructure supports batch jobs such as translation and data analysis, designed for stability over speed and clarity over cleverness.
 
-Deze machine draait:
+### Device Responsibilities
 
-* n8n
-* schedulers
-* workflowlogica
-* retries en foutafhandeling
+- **rpi5-ml** — execution of machine-learning, translation and processing tasks  
+- **rpi5-n8n** — orchestration and workflow control  
+- **Odroid UX4** — storage of datasets, output and logs  
+- **rpi3** — version control and general infra support
 
-Eigenschappen:
-
-* geen inhoudelijke verwerking
-* geen ML
-* geen zware compute
-
-De machine **beslist**, maar voert zelf geen zwaar werk uit.
+Stateful data lives on the UX4, not in scripts. Orchestration is separated from execution logic. :contentReference[oaicite:1]{index=1}
 
 ---
 
-### Odroid UX4
+## Data Structure (Odroid UX4)
 
-**Rol:** Data- en servicelaag
 
-Deze machine is verantwoordelijk voor:
-
-* opslag van datasets
-* output van batch-jobs
-* logs
-* databases (indien nodig)
-* backups en integriteitscontrole
-
-Eigenschappen:
-
-* stabiel
-* altijd aan
-* waarheid zit hier
-
-De UX4 bevat **state**. Andere machines niet.
-
----
-
-### Raspberry Pi 3
-
-**Rol:** Git & infra-hulpdiensten
-
-Deze machine draait:
-
-* self-hosted Git
-* configuratie-repositories
-* scripts
-* prompts
-* documentatie
-
-Eigenschappen:
-
-* licht
-* betrouwbaar
-* geen compute
-* geen data-verwerking
-
-Dit is het **geheugen van het project**.
-
----
-
-## Data-structuur (Odroid UX4)
-
-```text
 /data
- ├── raw/            # ruwe input
- ├── processing/     # in behandeling
- ├── translated/     # vertaalde output
- ├── reports/        # samenvattingen / analyses
- ├── logs/           # run-logs
-```
+├── raw/ # raw input files
+├── processing/ # in-progress work
+├── translated/ # completed output
+├── reports/ # analysis and summaries
+├── logs/ # run logs
 
-Deze structuur is leidend.
-Scripts mogen hier niet van afwijken zonder expliciete reden.
 
----
-
-## Orkestratie vs uitvoering
-
-* **n8n** bepaalt:
-
-  * wanneer een taak start
-  * welke stap volgt
-  * wat gebeurt bij falen
-
-* **CLI-scripts**:
-
-  * voeren exact één taak uit
-  * kennen geen planning
-  * kunnen veilig opnieuw draaien
-
-Een script mag nooit:
-
-* zelf retries regelen
-* zelf plannen
-* afhankelijk zijn van vorige runs
+This layout is definitive for batch tasks.
 
 ---
 
-## Code & configuratie
+## Workflow Summary
 
-* Alle scripts en configuraties staan in Git
-* Configuratie en secrets zijn gescheiden van code
-* Geen hardcoded paden of credentials
-* Elke service heeft:
+Work flows through the system in a set sequence:
 
-  * duidelijke naam
-  * vaste loglocatie
-  * eenvoudige start/stop-instructies
+
+
+Reports and reviews are written, not whispered. Decisions are stored in `DECISIONS.md`. :contentReference[oaicite:2]{index=2}
 
 ---
 
-## Logging & foutafhandeling
+## What this project is *not*
 
-* Elke batch-run schrijft logs
-* Fouten zijn zichtbaar en herleidbaar
-* Output wordt pas definitief bij succesvolle afronding
-* Bij falen blijft input intact
+- Not a real-time system  
+- Not an interactive application  
+- Not a development sandbox  
+- Not a place for untracked experiments
 
-Geen “stille fouten”.
-
----
-
-## Wijzigingen en besluitvorming
-
-Elke structurele wijziging aan de infrastructuur:
-
-* wordt vastgelegd
-* krijgt een duidelijke motivatie
-* volgt de checklist in `Infra-Engineer`
-
-Afwijkingen van deze README zijn toegestaan, maar **nooit impliciet**.
+If it can’t be explained simply, it doesn’t belong here.
 
 ---
 
-## Wat deze infrastructuur niet is
+## Getting Started
 
-* Geen realtime systeem
-* Geen interactieve omgeving
-* Geen playground
-* Geen plek voor slimme trucs
+You should begin with:
 
-Alles wat hier draait moet:
-
-* verklaarbaar zijn
-* overdraagbaar zijn
-* opnieuw op te zetten zijn
+1. `PROJECT_OVERVIEW.md` — context and boundaries  
+2. `ONBOARDING.md` — how to join in properly  
+3. Your role description in `/roles/`  
+4. `WORKFLOW.md` — understanding work flow before code
 
 ---
 
-## Slot
+## Reporting and Reviews
 
-Als iets niet eenvoudig uit te leggen is aan een nieuwe engineer,
-dan hoort het hier niet thuis.
+- Output is stored in `/reports/`  
+- Reviews live under `/reviews/`  
+- Structured templates guide every report and review
 
-Stabiliteit wint altijd van elegantie.
+This ensures discipline and traceability across all work.
 
+---
+
+## Contributing
+
+Contributions are guided by:
+- roles and workflows
+- documented decisions
+- structured reviews
+
+Discuss additions before implementing them.
+
+---
 
