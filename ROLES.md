@@ -25,5 +25,5 @@ De rolbeschrijvingen zijn bindend voor samenwerking en besluitvorming.
 
 - **Reviewer**
   - Leest output, controleert consistentie en signaleert issues
-
-Zie de individuele bestanden in `/roles/` voor details.
+  - Externe review-vormen zijn geen rollen en staan beschreven in /reviews/.”
+  - Zie de individuele bestanden in `/roles/` voor details.
