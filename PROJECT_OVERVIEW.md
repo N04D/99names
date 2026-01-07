@@ -77,14 +77,14 @@ Deze rollen implementeren niets en beslissen niets.
 
 ## Structuur (hoog niveau)
 
-├── PROJECT_OVERVIEW.md ← dit document
-├── DECISIONS.md ← bindende keuzes
-├── WORKFLOW.md ← hoe werk beweegt
-├── ROLES.md ← rolindex
-├── roles/ ← interne rollen
-├── reports/ ← inhoudelijke output
-├── reviews/ ← externe beoordelingskaders
-└── Prompts/ ← rolgebonden prompts
+- PROJECT_OVERVIEW.md ← dit document
+- DECISIONS.md ← bindende keuzes
+- WORKFLOW.md ← hoe werk beweegt
+- ROLES.md ← rolindex
+- roles/ ← interne rollen
+- reports/ ← inhoudelijke output
+- reviews/ ← externe beoordelingskaders
+- Prompts/ ← rolgebonden prompts
 
 
 Deze structuur is intentioneel.
