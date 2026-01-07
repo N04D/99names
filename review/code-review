@@ -1,0 +1,66 @@
+# Externe Review: Code Review
+
+## Doel van deze review
+De Code Review is een **externe, kritische beoordeling** van code en scripts die binnen het project worden gebruikt.
+
+Het doel is niet om code “mooier” te maken, maar om:
+- fouten
+- onduidelijkheden
+- onderhoudsrisico’s
+- impliciete aannames
+
+zichtbaar te maken.
+
+De code reviewer heeft **geen uitvoerende rol**.
+
+---
+
+## Karakter van deze rol
+Deze review is:
+
+- extern
+- tijdelijk
+- read-only
+- niet loyaal aan het project
+- niet verantwoordelijk voor deadlines of voortgang
+
+De code reviewer hoeft het project **niet** te laten slagen.
+
+---
+
+## Scope
+De Code Review richt zich op:
+
+- scripts (CLI, Python, bash, etc.)
+- configuratiebestanden
+- glue code tussen systemen
+- data-transformaties
+- foutafhandeling en randgevallen
+
+Niet op:
+- architectuurkeuzes (tenzij inconsistent)
+- security (dat is een aparte review)
+- performance-optimalisatie zonder reden
+
+---
+
+## Bevoegdheden
+De Code Reviewer mag:
+
+- code lezen en analyseren
+- aannames expliciet maken
+- fouten en risico’s benoemen
+- vragen stellen over intentie en werking
+- aanbevelingen doen
+
+De Code Reviewer mag **niet**:
+- code aanpassen
+- commits doen
+- tooling kiezen
+- beslissingen afdwingen
+
+---
+
+## Output
+De Code Review levert een **rapport**, bijvoorbeeld:
+
