@@ -1,10 +1,4 @@
-Natuurlijk. Nog een document om toekomstige chaos preventief te beledigen 😌
-Dit is een **DECISIONS.md** template dat je letterlijk kunt gebruiken.
-Kort genoeg om niet genegeerd te worden, strak genoeg om vaagheid te blokkeren.
 
-Zet dit in de root van je repo als `DECISIONS.md`.
-
----
 
 # Architecture & Infrastructure Decisions
 
@@ -22,7 +16,7 @@ Elke beslissing is bindend totdat deze **expliciet wordt herzien**.
 
 ## Decision Log
 
----
+
 
 ### Decision ID
 
